@@ -6,27 +6,27 @@ import org.openqa.selenium.WebElement;
 
 public class LoginPage extends BasePage {
 
-    protected static final String usernameInputSelector = "user-name"; //id
-    protected static final String passwordInputSelector = "password"; //id
-    protected static final String loginBtnSelector = "login-button"; //id
-    protected static final String pageTitleSelector = "//*[@id=\"header_container\"]/div[2]/span"; //XPath
+    protected static final By usernameInputSelector = By.id("user-name");
+    protected static final By passwordInputSelector = By.id("password");
+    protected static final By loginBtnSelector = By.id("login-button");
+    protected static final By pageTitleSelector = By.xpath("//*[@id=\"header_container\"]/div[2]/span");
 
     public void insertLoginData(String username, String password) {
-        WebElement usernameInput = getWebElement(By.id(usernameInputSelector));
+        WebElement usernameInput = getWebElement(usernameInputSelector);
         usernameInput.clear();
         usernameInput.sendKeys(username);
-        WebElement passwordInput = getWebElement(By.id(passwordInputSelector));
+        WebElement passwordInput = getWebElement(passwordInputSelector);
         passwordInput.clear();
         passwordInput.sendKeys(password);
     }
 
     public void login() {
-        WebElement loginBtn = getWebElement(By.id(loginBtnSelector));
+        WebElement loginBtn = getWebElement(loginBtnSelector);
         loginBtn.click();
     }
 
     public String getPageTitle() {
-        WebElement pageTitle = getWebElement(By.xpath(pageTitleSelector));
+        WebElement pageTitle = getWebElement(pageTitleSelector);
         return pageTitle.getText();
     }
 
