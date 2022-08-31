@@ -2,7 +2,8 @@
 ${HOST}                                 https://pokeapi.co/api/v2/pokemon-color/
 
 *** Keywords ***
-
+Verificação de Pokemons por cor
+    Verificar cor  red
 
 
 
